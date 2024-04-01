@@ -2,24 +2,25 @@
 
 namespace Inndividuell\ContaoPhpVersion\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Contao\CoreBundle\Controller\AbstractBackendController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BackendController extends AbstractController
-{
-    /**
-     * @Route("/contao/backend/phpinfo", name="backend_phpinfo")
-     */
-    public function phpinfoAction()
-    {
-        ob_start();
-        phpinfo();
-        $phpinfo = ob_get_contents();
-        ob_end_clean();
+#[Route('/%contao.backend.route_prefix%/inn/php-version', name: self::class, defaults: ['_scope' => 'backend'])]
 
-        return new Response(
-            '<html><body>' . $phpinfo . '</body></html>'
+class BackendController extends AbstractBackendController
+{
+    public function __invoke(): Response
+    {
+        return $this->render(
+            'inn_backend_php.html.twig',
+            [
+                'error' => 'Oh no, an error!',
+                'title' => 'My title',
+                'headline' => 'PHP version',
+                'version' => 'I can overwrite what I want',
+                'content' => phpinfo(),
+            ]
         );
     }
 }

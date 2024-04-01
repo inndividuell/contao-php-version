@@ -1,5 +1,3 @@
-backend_phpinfo:
-  path: /contao/backend/phpinfo
-  controller: Inndividuell\ContaoPhpVersion\Controller\BackendController::phpinfoAction
-  defaults:
-    _scope: 'backend'
+app.controller:
+  resource: ../src/Controller
+  type: annotation
