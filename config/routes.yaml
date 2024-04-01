@@ -1,0 +1,3 @@
+backend_phpinfo:
+  path: /backend/phpinfo
+  controller: Inndividuell\ContaoPhpVersion\Controller\BackendController::phpinfoAction

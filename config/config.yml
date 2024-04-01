@@ -1,0 +1,5 @@
+contao:
+    backend:
+        phpinfo:
+            tables:
+                - tl_module
