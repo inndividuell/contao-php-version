@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class BackendController extends AbstractController
 {
     /**
-     * @Route("/backend/phpinfo", name="backend_phpinfo")
+     * @Route("/contao/backend/phpinfo", name="backend_phpinfo")
      */
     public function phpinfoAction()
     {
