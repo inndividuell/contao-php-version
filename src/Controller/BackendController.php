@@ -6,8 +6,7 @@ use Contao\CoreBundle\Controller\AbstractBackendController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/%contao.backend.route_prefix%/inn/php-version', name: self::class, defaults: ['_scope' => 'backend'])]
-
+#[Route('/%contao.backend.route_prefix%/inn-php-version', name: self::class, defaults: ['_scope' => 'backend'])]
 class BackendController extends AbstractBackendController
 {
     public function __invoke(): Response
